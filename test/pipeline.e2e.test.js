@@ -9,7 +9,7 @@ describe('Pipeline', () => {
   test('can load code using node: scheme', async () => {
     // given
     const definition = await load('e2e/world-clock-node.ttl')
-    const pipe = Pipeline(definition)
+    const pipe = Pipeline(definition, 'http://example.org/pipeline/')
     let out = ''
     pipe.on('data', (chunk) => {
       out += chunk
@@ -27,7 +27,7 @@ describe('Pipeline', () => {
   test('can load code using file: scheme', async () => {
     // given
     const definition = await load('e2e/world-clock-file.ttl')
-    const pipe = Pipeline(definition)
+    const pipe = Pipeline(definition, 'http://example.org/pipeline/')
     let out = ''
     pipe.on('data', (chunk) => {
       out += chunk
@@ -45,7 +45,7 @@ describe('Pipeline', () => {
   test('can load code using async loaders', async () => {
     // given
     const definition = await load('e2e/world-clock-async.ttl')
-    const pipe = Pipeline(definition, {
+    const pipe = Pipeline(definition, 'http://example.org/pipeline/', {
       additionalLoaders: [
         asyncLoaders.promisedUrl,
         asyncLoaders.ecmaScriptLoaderWrapper

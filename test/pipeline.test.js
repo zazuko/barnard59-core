@@ -51,6 +51,7 @@ describe('pipeline', () => {
 
       // when
       const pipeline = Pipeline(definition, { iri })
+      await pipeline.initVariables()
 
       // then
       expect(pipeline.variables.get('foo')).toBe('bar')
@@ -65,6 +66,7 @@ describe('pipeline', () => {
 
       // when
       const pipeline = Pipeline(definition, { iri, variables })
+      await pipeline.initVariables()
 
       // then
       expect(pipeline.variables.size).toBe(2)
@@ -78,6 +80,7 @@ describe('pipeline', () => {
 
       // when
       const pipeline = Pipeline(definition, { iri })
+      await pipeline.initVariables()
 
       // then
       expect(pipeline.variables.size).toBe(2)

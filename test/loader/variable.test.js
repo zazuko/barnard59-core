@@ -62,7 +62,7 @@ describe('variable loader', () => {
 
   test('loads variable from a string', () => {
     // given
-    const node = rdf.literal('foo', ns.p('variable'))
+    const node = rdf.literal('foo', ns.p('VariableName'))
     const variables = new Map([ [ 'foo', 'bar' ] ])
 
     // when

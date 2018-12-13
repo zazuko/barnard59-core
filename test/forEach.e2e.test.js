@@ -28,8 +28,7 @@ describe('forEach', () => {
   test('variables set in forEach are preserved during execution', async () => {
     // given
     const definition = await load('/e2e/foreach-with-handler.ttl')
-    const pipe = Pipeline(definition, {
-      iri: 'http://example.org/pipeline/',
+    const pipe = Pipeline(definition, 'http://example.org/pipeline/', {
       basePath: path.resolve('test'),
       objectMode: true
     })

@@ -1,5 +1,4 @@
 @base <http://example.org/pipeline/> .
-@prefix code: <http://example.org/code/> .
 @prefix code: <https://code.described.at/> .
 @prefix p: <https://pipeline.described.at/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .

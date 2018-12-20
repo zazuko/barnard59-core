@@ -25,7 +25,7 @@
   ];
   code:arguments (
     <Print>
-    "chunk => this.variables.set('file', chunk)"^^code:EcmaScript
+    "(p, chunk) => p.variables.set('file', chunk)"^^code:EcmaScript
   ).
 
 <Print> a p:ObjectPipeline ;
@@ -47,6 +47,6 @@
     code:link <file:support/operations/inlineTransform> ;
     a code:EcmaScript
   ] ;
-  code:arguments (
-    "chunk => chunk.length"^^code:EcmaScript
+  p:arguments (
+    "_ => this.variables.get('file')"^^code:EcmaScript
   ) .

@@ -46,6 +46,6 @@
     code:link <file:support/operations/inlineTransform> ;
     a code:EcmaScript
   ] ;
-  p:arguments (
+  code:arguments (
     "_ => this.variables.get('file')"^^code:EcmaScript
   ) .

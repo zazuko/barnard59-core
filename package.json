@@ -34,8 +34,7 @@
     "jest": "^23.6.0",
     "jest-extended": "^0.11.0",
     "rdf-ext": "^1.1.2",
-    "standard": "^12.0.1",
-    "string-to-stream": "^1.1.1"
+    "standard": "^12.0.1"
   },
   "jest": {
     "collectCoverage": true,

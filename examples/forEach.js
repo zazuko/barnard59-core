@@ -16,6 +16,7 @@ async function buildDefinition () {
 }
 
 buildDefinition()
-  .then(def => pipeline(def.dataset, { iri: def.iri, basePath: __dirname }).pipe(process.stdout))
-  .then(test => run(test))
+  .then(def => pipeline(def.dataset, def.iri, { basePath: __dirname }))
+  .then(pipeline => pipeline.getStream())
+  .then(stream => run(stream.pipe(process.stdout)))
   .catch(err => console.error(err))

@@ -24,6 +24,6 @@
 <http://example.org/pipeline#serializeJson> code:implementedBy [ a code:EcmaScript ;
             code:link <file:steps/serializeJson.js> ] .
 
-<http://example.org/pipeline#subPipeline> a p:Pipeline ;
+<http://example.org/pipeline#subPipeline> a p:Pipeline, p:WritablePipeline ;
     p:steps [ p:stepList ( <http://example.org/pipeline#duplicate> ) ] .
 

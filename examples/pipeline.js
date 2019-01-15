@@ -53,7 +53,6 @@ function buildDefinition () {
 }
 
 buildDefinition()
-  .then(definition => pipeline(definition, base('pipeline'), { basePath: __dirname }))
-  .then(pipeline => pipeline.getStream())
-  .then(test => run(test.pipe(process.stdout)))
+  .then(definition => pipeline(definition, base('pipeline'), { basePath: __dirname }).pipe(process.stdout))
+  .then(test => run(test))
   .catch(err => console.error(err))

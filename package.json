@@ -20,6 +20,7 @@
   "dependencies": {
     "@rdfjs/namespace": "^1.0.0",
     "clownface": "git+https://github.com/rdf-ext/clownface.git#develop",
+    "duplexify": "^3.6.1",
     "isstream": "^0.1.2",
     "lodash": "^4.17.11",
     "readable-stream": "^3.0.6"
@@ -33,7 +34,8 @@
     "jest": "^23.6.0",
     "jest-extended": "^0.11.0",
     "rdf-ext": "^1.1.2",
-    "standard": "^12.0.1"
+    "standard": "^12.0.1",
+    "string-to-stream": "^1.1.1"
   },
   "jest": {
     "collectCoverage": true,

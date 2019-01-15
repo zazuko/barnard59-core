@@ -17,16 +17,17 @@ const run = require('../../lib/run')
  */
 module.exports = async function (pipe, initialValue = '', appendChunk = null) {
   let returnValue = initialValue
+  const stream = await pipe.getStream()
 
   appendChunk = appendChunk || function (chunk, current) {
     return current + chunk
   }
 
-  pipe.on('data', (chunk) => {
+  stream.on('data', (chunk) => {
     returnValue = appendChunk(chunk, returnValue)
   })
 
-  await run(pipe)
+  await run(stream)
 
   return returnValue
 }

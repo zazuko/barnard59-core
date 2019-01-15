@@ -29,6 +29,7 @@ module.exports = async function (pipe, initialValue = '', appendChunk = null) {
   pipe.context.log.on('data', log => {
     console.log(log.level, log.stack[0], log.message, '\n  ', log.stack.slice(1).join(' -> '))
   })
+
   await run(pipe)
 
   return returnValue
